@@ -24,8 +24,10 @@ const Form = () => {
     const [email, setEmail] = useState('');
     // useEffect를 사용해서 컴포넌트가 렌더링될 때 마다 이름과 이메일이 출력되도록 작성.
     useEffect(() => {
-        console.log(`name: ${name}, email: ${email}\n`)
-    })
+        // console.log(`name: ${name}, email: ${email}\n`)
+        console.log('\n ====== Form Component Mount ====== \n')
+        return () => console.log('\n ====== Form Component Unmount ====== \n')
+    }, []) // 이렇게 설정하면 이메일이 변경될 때만 useEffect가 동작하도록 설정. name이 변경될때는 작동하지 않는다.
     return(
         <>
         <StyledText>Name: {name}</StyledText>
