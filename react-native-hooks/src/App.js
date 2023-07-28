@@ -24,7 +24,6 @@ const App = () => {
             title={isVisible ? 'Hide' : 'Show'}
             onPress = {() => setIsVisible(prev => !prev)}
              />
-
         {isVisible && <Form />}
 
     </Container>
